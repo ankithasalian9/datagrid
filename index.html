@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="src/tableHTMLExport.js"></script>
+
+    <script type="text/javascript" src="src/jquery-3.3.1.slim.min.js"></script>
+
+    <script type="text/javascript" src="src/jspdf.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="src/jspdf.plugin.autotable.min.js"
+    ></script>
+
+    <script type="text/javascript" src="src/tableHTMLExport.js"></script>
+    <script src="main.js"></script>
+    <title>DATA GRID</title>
+  </head>
+
+  <!-- body -->
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand">DATA GRID</a>
+      <form class="form-inline">
+        <button class="btn btn-outline-primary my-2 my-sm-0" id="json">
+          Export
+        </button>
+
+        <script type="text/javascript">
+          $('#json').on('click', function () {
+            $('#show').tableHTMLExport({
+              type: 'json',
+              filename: 'sample.json',
+            });
+          });
+        </script>
+      </form>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            placeholder="John"
+            class="form-control"
+            id="fname"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            placeholder="Doe"
+            class="form-control"
+            id="lname"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="email"> Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            placeholder="yourname@domain.com"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="city"> City</label>
+          <input
+            type="test"
+            class="form-control"
+            id="city"
+            placeholder="Bengaluru"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="98********"
+          />
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="ZIP"> ZIP</label>
+          <input
+            type="number"
+            class="form-control"
+            id="ZIP"
+            placeholder="575001"
+          />
+        </div>
+
+        <div class="form-group"></div>
+        <button type="submit" class="btn btn-primary" onclick="AddRow()">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <table class="table border" id="show">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+            <th scope="col">Phone</th>
+            <th scope="col">ZIP</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+   
+</html>
